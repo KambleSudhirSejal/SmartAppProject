@@ -1,0 +1,94 @@
+/* Container for side-by-side layout */
+.container {
+    display: flex;
+    gap: 30px;            /* space between controls and graph */
+    align-items: flex-start; 
+    align-items: stretch; 
+    flex-wrap: wrap;       /* makes it responsive on smaller screens */
+}
+
+/* Controls section */
+#Contents {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Graph section */
+/* Graph section */
+#graph-container {
+    width: 500px;
+    height: 400px; /* set a proper height */
+}
+
+/* Make canvas fill container */
+#graph-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* Toggle container */
+.toggle-container, .intensity-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.toggle-container label, .intensity-container input[type=range] {
+    margin-right: 15px;
+}
+
+#status, #IntensityValue {
+    font-weight: bold;
+}
+
+/* Toggle switch styles (keep previous) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input { display: none; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; width: 26px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider { background-color: #4CAF50; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+/* Intensity slider full width */
+input[type=range] {
+    flex: 1;
+}
+
+#TodayAndSetDateButton{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 20px;
+}
+button{
+    padding: 10px;
+    background-color: rgb(221, 122, 196);
+    color: white;
+    border: none;
+}
